@@ -3,7 +3,7 @@ description: run cibuilder in a standalone docker container
 
 inputs:
   run_cmd:
-    description: cibuilder command (check|build|test|deploy|all)
+    description: cibuilder command (check|build|test|release|all)
     required: true
   bin_url:
     description: cibuilder bin url (repo url)
