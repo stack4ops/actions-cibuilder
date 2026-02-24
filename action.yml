@@ -16,7 +16,7 @@ inputs:
   image:
     description: cibuilder image
     required: false
-    default: docker.io/stack4ops/cibuilder:rootless
+    default: ghcr.io/stack4ops/cibuilder:rootless
 
 runs:
   using: composite
