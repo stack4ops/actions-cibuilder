@@ -7,6 +7,7 @@ export CIBUILDER_BIN_REF="$3"
 IMAGE="$4"
 
 env | grep '^GITHUB_' > github.env
+env | grep '^ACTIONS_' >> github.env
 env | grep '^CIBUILD_' >> github.env
 env | grep '^CIBUILDER_' >> github.env
 
