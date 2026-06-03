@@ -10,13 +10,15 @@ IMAGE="$4"
 
 CIBUILD_OUTPUT="${RUNNER_TEMP:-/tmp}/cibuild-output"
 mkdir -p "${CIBUILD_OUTPUT}"
-chmod 1777 "${CIBUILD_OUTPUT}"
+sudo chmod 1777 "${CIBUILD_OUTPUT}"
 
 env | grep '^GITHUB_' > github.env
 env | grep '^ACTIONS_' >> github.env
 env | grep '^CIBUILD_' >> github.env
 env | grep '^CIBUILDER_' >> github.env
 echo "CIBUILD_OUTPUT_DIR=/cibuild-output" >> github.env
+
+sudo chown -R 1000:1000 "$PWD"
 
 docker run --privileged --rm \
   --env-file github.env \
