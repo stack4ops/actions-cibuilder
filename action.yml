@@ -3,7 +3,7 @@ description: run cibuilder in a standalone docker container
 
 inputs:
   run_cmd:
-    description: cibuilder command (check|build|test|release|all)
+    description: cibuilder command (build|test|release|all|update-caches)
     required: true
   bin_url:
     description: cibuilder bin url (repo url)
@@ -16,7 +16,7 @@ inputs:
   image:
     description: cibuilder image
     required: false
-    default: ghcr.io/stack4ops/cibuilder:all
+    default: ghcr.io/stack4ops/cibuilder:lab
 
 runs:
   using: composite
