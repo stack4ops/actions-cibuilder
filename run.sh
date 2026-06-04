@@ -3,7 +3,9 @@ set -euo pipefail
 
 sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
 
-export CIBUILD_RUN_CMD="$1"
+# don't overwrite pinned ENV CIBUILD_RUN_CMD in images with empty string
+[ -n "$1" ] && export CIBUILD_RUN_CMD="$1"
+
 export CIBUILDER_BIN_URL="$2"
 export CIBUILDER_BIN_REF="$3"
 IMAGE="$4"
