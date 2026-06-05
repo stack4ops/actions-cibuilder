@@ -19,6 +19,7 @@ env | grep '^ACTIONS_' >> github.env
 env | grep '^CIBUILD_' >> github.env
 env | grep '^CIBUILDER_' >> github.env
 echo "CIBUILD_OUTPUT_DIR=/cibuild-output" >> github.env
+sudo chmod 777 github.env
 
 sudo chown -R 1000:1000 "$PWD"
 
